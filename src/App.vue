@@ -1,15 +1,21 @@
 <template>
   <div id="app">
-    <nav>
+    <!--     <nav>
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </nav>
     <router-view/>
+    <p to="/LocalView"></p> -->
+    <router-view />
+    <van-tabbar v-model="active" routo>
+      <van-tabbar-item repalce to="/" icon="home-o">全国疫情</van-tabbar-item>
+      <van-tabbar-item repalce to="/local" icon="search">地方疫情</van-tabbar-item>
+    </van-tabbar>
   </div>
 </template>
 
 <style lang="less">
-#app {
+/* #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -28,5 +34,7 @@ nav {
       color: #42b983;
     }
   }
-}
+} */
+
 </style>
+
