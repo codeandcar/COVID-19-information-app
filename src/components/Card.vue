@@ -1,0 +1,24 @@
+<template>
+  <div class="card">
+    <h2>{{ ntype }}{{ num1 }}</h2>
+    <h3>较昨日+{{ num2 }}</h3>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "Card",
+  props: {
+    ntype: String,
+    num1: Number,
+    num2: Number,
+  },
+};
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped lang="less">
+h1 {
+  margin: 40px 0 0;
+}
+</style>

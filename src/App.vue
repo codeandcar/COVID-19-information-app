@@ -1,11 +1,6 @@
 <template>
   <div id="app">
-    <!--     <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
-    <p to="/LocalView"></p> -->
+    <h1>新冠疫情查询</h1>
     <router-view />
     <van-tabbar v-model="active" routo>
       <van-tabbar-item repalce to="/" icon="home-o">全国疫情</van-tabbar-item>
@@ -15,26 +10,19 @@
 </template>
 
 <style lang="less">
-/* #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+#app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-} */
-
 </style>
 
+<script>
+export default {
+  data() {
+    return {
+      active: 0,
+    };
+  },
+};
+</script>
