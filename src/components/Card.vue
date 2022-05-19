@@ -1,7 +1,7 @@
 <template>
   <div class="card">
-    <h2>{{ ntype }}{{ num1 }}</h2>
-    <h3>较昨日+{{ num2 }}</h3>
+    <h2>{{ ntype }}{{ total }}</h2>
+    <h3>较昨日+{{ addition }}</h3>
   </div>
 </template>
 
@@ -10,8 +10,8 @@ export default {
   name: "Card",
   props: {
     ntype: String,
-    num1: Number,
-    num2: Number,
+    total: Number,
+    addition: Number,
   },
 };
 </script>
