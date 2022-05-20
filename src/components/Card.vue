@@ -19,16 +19,12 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
 .card {
-  width:250px;
-  box-shadow:0 4px 8px 0 #aaa;
-  border-radius: 1rem;
-  --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  margin-left: 40px;
+
 }
 .totalfont{
-  	font-size: 1.875rem;
-    line-height: 2.25rem;
-    font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 .todayfont{
     font-size: 1.25rem;

@@ -1,17 +1,11 @@
 <template>
   <div class="nation">
-    <Card ntype="测试到底怎么比较好看"></Card>
-<!--     <Card ntype="治愈数量:" :total=totallist.heal :addition=todaylist.heal></Card>
-    <Card ntype="死亡数量:" :total=totallist.dead :addition=todaylist.dead></Card>
-    <Card ntype="累计数量:" :total=totallist.confirm :addition=todaylist.confirm></Card>
-    <Card ntype="现有数量:" :total=totallist.confirm-totallist.dead-totallist.heal :addition=todaylist.storeConfirm></Card>
-    <Card ntype="境外输入:" :total=totallist.input :addition=todaylist.input></Card>
-    <Card ntype="无症状感染者:" :total=symnum.noSymptom :addition=symnum.incrNoSymptom></Card> -->
-<!--     <ul>
-      <li v-for="item in datalist">
-        {{item}}
-      </li>
-    </ul> -->
+    <Card ntype="治愈数量:" :total=totallist.heal :addition=todaylist.heal></Card><hr>
+    <Card ntype="死亡数量:" :total=totallist.dead :addition=todaylist.dead></Card><hr>
+    <Card ntype="累计数量:" :total=totallist.confirm :addition=todaylist.confirm></Card><hr>
+    <Card ntype="现有数量:" :total=totallist.confirm-totallist.dead-totallist.heal :addition=todaylist.storeConfirm></Card><hr>
+    <Card ntype="境外输入:" :total=totallist.input :addition=todaylist.input></Card><hr>
+    <Card ntype="无症状感染者:" :total=symnum.noSymptom :addition=symnum.incrNoSymptom></Card>
   </div>
 </template>
 
@@ -52,3 +46,25 @@ export default {
 }
 
 </script>
+
+<style scoped>
+.nation{
+  width:90%;
+  height:450px;
+  --tw-bg-opacity: 1;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+  border-radius: 1rem;
+  --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  }
+  hr{
+    --tw-divide-x-reverse: 40;
+    border-right-width: calc(8px * var(--tw-divide-x-reverse));
+    border-left-width: calc(8px * calc(1 - var(--tw-divide-x-reverse)));
+		--tw-divide-opacity: 1;
+    border-color: rgba(209, 213, 219, var(--tw-divide-opacity));
+  }
+</style>
