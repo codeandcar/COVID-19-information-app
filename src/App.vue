@@ -8,6 +8,7 @@
     <van-tabbar v-model="active" routo>
       <van-tabbar-item repalce to="/" icon="home-o">全国疫情</van-tabbar-item>
       <van-tabbar-item repalce to="/local" icon="search">省份疫情</van-tabbar-item>
+      <van-tabbar-item repalce to="/other" icon="search">他国疫情</van-tabbar-item>
     </van-tabbar>
   </div>
 </template>

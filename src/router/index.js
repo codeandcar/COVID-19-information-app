@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import NationView from '../views/NationView.vue'
 import LocalView from '../views/LocalView.vue'
+import OtherView from '../views/OtherView.vue'
 
 Vue.use(VueRouter)
 
@@ -15,6 +16,11 @@ const routes = [
     path: '/local',
     name: 'local',
     component: LocalView
+  },
+  {
+    path: '/other',
+    name: 'other',
+    component: OtherView
   }
 ]
 

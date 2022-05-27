@@ -1,11 +1,11 @@
 <template>
   <div class="nation">
-    <Card ntype="治愈数量:" :total=totallist.heal :addition=todaylist.heal></Card><hr>
-    <Card ntype="死亡数量:" :total=totallist.dead :addition=todaylist.dead></Card><hr>
-    <Card ntype="累计数量:" :total=totallist.confirm :addition=todaylist.confirm></Card><hr>
-    <Card ntype="现有数量:" :total=totallist.confirm-totallist.dead-totallist.heal :addition=todaylist.storeConfirm></Card><hr>
-    <Card ntype="境外输入:" :total=totallist.input :addition=todaylist.input></Card><hr>
-    <Card ntype="无症状感染者:" :total=symnum.noSymptom :addition=symnum.incrNoSymptom></Card>
+    <Card ntype="治愈数量:" :total="totallist.heal" :addition="todaylist.heal"></Card><hr>
+    <Card ntype="死亡数量:" :total="totallist.dead" :addition="todaylist.dead"></Card><hr>
+    <Card ntype="累计数量:" :total="totallist.confirm" :addition="todaylist.confirm"></Card><hr>
+    <Card ntype="现有数量:" :total="totallist.confirm-totallist.dead-totallist.heal" :addition="todaylist.storeConfirm"></Card><hr>
+    <Card ntype="境外输入:" :total="totallist.input" :addition="todaylist.input"></Card><hr>
+    <Card ntype="无症状感染者:" :total="symnum.noSymptom" :addition="symnum.incrNoSymptom"></Card>
   </div>
 </template>
 
@@ -50,7 +50,7 @@ export default {
 <style scoped>
 .nation{
   width:90%;
-  height:450px;
+  height:60%;
   --tw-bg-opacity: 1;
   background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
   border-radius: 1rem;

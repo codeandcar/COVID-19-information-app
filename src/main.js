@@ -4,6 +4,7 @@ import router from './router'
 import Vant from 'vant';
 import 'vant/lib/index.css';
 import axios from 'axios'
+import './assets/global.css'
 
 axios.defaults.baseURL='/api'
 Vue.use(Vant);
