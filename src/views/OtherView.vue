@@ -1,5 +1,6 @@
 <template>
-  <div class="local">
+  <div class="other">
+    <div class="cardlist">
     <form action="/">
       <van-search
         v-model="other"
@@ -13,6 +14,7 @@
       <Card ntype="累计数量:" :total="item.total.confirm" :addition="item.today.confirm"></Card><hr>
       <Card ntype="现有数量:" :total="item.total.confirm-item.total.heal-item.total.dead" :addition="item.today.storeConfirm"></Card><hr>
       <Card ntype="境外输入:" :total="item.total.input" :addition="item.total.input"></Card>
+    </div>
     </div>
   </div>
 </template>
@@ -53,12 +55,20 @@ export default {
 </script>
 
 <style scoped>
-.local{
-  width:90%;
+.other {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cardlist{
+  width: 80%;
   --tw-bg-opacity: 1;
   background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
   border-radius: 1rem;
-  --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 </style>
