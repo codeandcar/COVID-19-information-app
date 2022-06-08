@@ -1,6 +1,7 @@
 <template>
   <div class="local">
     <div class="cardlist">
+      <!-- 搜索框 -->
       <form action="/">
         <van-search
           v-model="local"
@@ -8,6 +9,7 @@
           shape="round"
         />
       </form>
+      <!-- 信息卡片 -->
       <div v-for="item in locallist" v-show="item.name == local">
         <Card
           ntype="治愈数量:"
@@ -44,8 +46,8 @@ import Card from "@/components/Card.vue";
 export default {
   data() {
     return {
-      local: "",
-      locallist: [],
+      local: "",//需要搜索的省份
+      locallist: [],//获取到的省份信息列表
     };
   },
   components: {
@@ -55,14 +57,14 @@ export default {
     this.loadData();
   },
   methods: {
-    loadData() {
+    loadData() {//通过axios获取api返回的json文件并存储到data中
       let that = this;
       this.$ajax
         .get("wuhan/app/data/list-total")
         .then(function (res) {
           //console.log(res.data.data.areaTree[2]);
           that.locallist = res.data.data.areaTree[2].children;
-          //console.log(that.locallist);
+          // console.log(that.locallist);
         })
         .catch(function (res) {
           console.log(res);

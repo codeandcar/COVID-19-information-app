@@ -3,15 +3,15 @@
     <div class="title">
       <div>新冠疫情信息查询</div>
     </div>
+    <!-- 导航栏 -->
     <div class="content">
     <van-tabbar v-model="active" routo>
       <van-tabbar-item repalce to="/" icon="home-o">全国疫情</van-tabbar-item>
       <van-tabbar-item repalce to="/local" icon="search">省份疫情</van-tabbar-item>
-      <van-tabbar-item repalce to="/other" icon="weapp-nav">他国疫情</van-tabbar-item>
+      <van-tabbar-item repalce to="/other" icon="weapp-nav">国家疫情</van-tabbar-item>
     </van-tabbar>
     </div>
     <router-view />
-    
   </div>
 </template>
 
@@ -41,7 +41,7 @@
 export default {
   data() {
     return {
-      active: 0,
+      active: 0,//打开app时默认在第一个页面
     };
   },
 };

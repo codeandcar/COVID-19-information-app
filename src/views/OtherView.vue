@@ -1,6 +1,7 @@
 <template>
   <div class="other">
     <div class="cardlist">
+    <!-- 搜索框 -->
     <form action="/">
       <van-search
         v-model="other"
@@ -8,12 +9,12 @@
         shape="round"
       />
     </form>
+    <!-- 搜索后的信息显示 -->
     <div v-for="item in otherlist" v-show="item.name==other">
       <Card ntype="治愈数量:" :total="item.total.heal" :addition="item.today.heal"></Card><hr>
       <Card ntype="死亡数量:" :total="item.total.dead" :addition="item.today.dead"></Card><hr>
       <Card ntype="累计数量:" :total="item.total.confirm" :addition="item.today.confirm"></Card><hr>
-      <Card ntype="现有数量:" :total="item.total.confirm-item.total.heal-item.total.dead" :addition="item.today.storeConfirm"></Card><hr>
-      <Card ntype="境外输入:" :total="item.total.input" :addition="item.total.input"></Card>
+      <Card ntype="现有数量:" :total="item.total.confirm-item.total.heal-item.total.dead" :addition="item.today.storeConfirm"></Card>
     </div>
     </div>
   </div>
@@ -26,8 +27,8 @@ import Card from "@/components/Card.vue";
 export default {
   data() {
     return {
-      other: "",
-      otherlist: [],
+      other: "",//所要搜索的国家名称
+      otherlist: [],//获取到的国家信息列表
     };
   },
   components: {
@@ -37,14 +38,14 @@ export default {
     this.loadData();
   },
   methods: {
-    loadData() {
+    loadData() {//通过axios获取api返回的json文件并存储到data中
       let that = this;
       this.$ajax
         .get("wuhan/app/data/list-total")
         .then(function (res) {
           //console.log(res.data.data.areaTree);
           that.otherlist = res.data.data.areaTree;
-          //console.log(that.locallist);
+          // console.log(that.otherlist);
         })
         .catch(function (res) {
           console.log(res);

@@ -1,5 +1,6 @@
 <template>
   <div class="nation">
+    <!-- 信息卡片 -->
     <div class="cardlist">
       <Card
         ntype="治愈数量:"
@@ -65,7 +66,7 @@ export default {
     };
   },
   methods: {
-    loadTime(num) {
+    loadTime(num) {//将json文件中的时间戳转换为时间
       //时间戳数据处理
       let date = new Date(num);
       // console.log(date);
@@ -84,7 +85,7 @@ export default {
       return y + "-" + MM + "-" + d + " " + h + ":" + m + ":" + s; 
       //  console.log(this.deadline);
     },
-    loadData() {
+    loadData() {//通过axios获取api返回的json文件并存储到data中
       let that = this;
       this.$ajax
         .get("wuhan/app/data/list-total")
@@ -94,7 +95,7 @@ export default {
           that.todaylist = res.data.data.chinaTotal.today;
           that.symnum = res.data.data.chinaTotal.extData;
           that.deadline=that.loadTime(res.data.timestamp);
-          // console.log(that.deadline)
+          // console.log(res.data.data.chinaTotal)
         })
         .catch(function (res) {
           console.log(res);
